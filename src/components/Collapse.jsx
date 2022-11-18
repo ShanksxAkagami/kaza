@@ -1,28 +1,19 @@
 import React from "react";
+import { useState } from "react";
 
 import arrowCollapse from "../assets/Vector-1.png";
 
 const Collapse = ({ title, content }) => {
-  const isCollapse = (e) => {
-    e.preventDefault();
-    const divText = e.target.nextSibling;
-    const arrow = e.target.lastChild;
 
-    if (!divText.classList.contains("show")) {
-      divText.classList.add("show");
-      arrow.classList.add("rotate");
-    } else {
-      divText.classList.remove("show");
-      arrow.classList.remove("rotate");
-    }
-  };
-  return (
+  const [isOpen, setIsOpen] = useState(false);
+
+  return isOpen ? (
     <div className="collapse ">
-      <button type="button" className="collapse__button" onClick={isCollapse}>
+      <button type="button" className="collapse__button" onClick={() => setIsOpen(false)}>
         {title}
-        <img src={arrowCollapse} alt="arrow" className="collapse__arrow" />
+        <img src={arrowCollapse} alt="arrow" className="collapse__arrow rotate" />
       </button>
-      <div className="collapse__content">
+      <div className="collapse__content show">
         {Array.isArray(content) ? (
           <ul className="collapse__list">
             {content.map((equipment, index) => (
@@ -36,7 +27,15 @@ const Collapse = ({ title, content }) => {
         )}
       </div>
     </div>
-  );
+  ) : (
+    <div className="collapse ">
+      <button type="button" className="collapse__button" onClick={() => setIsOpen(true)}>
+        {title}
+        <img src={arrowCollapse} alt="arrow" className="collapse__arrow" />
+      </button>
+    </div>
+  )
+
 };
 
 export default Collapse;
