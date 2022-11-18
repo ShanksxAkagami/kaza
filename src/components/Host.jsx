@@ -10,7 +10,6 @@ const Host = ({ host }) => {
         <p className="server__firstname">{name.trim()}</p>
         <p className="server__lastname">{lastname.trim()}</p>
       </div>
-
       <img src={host.picture} alt="host" className="server__picture" />
     </div>
   );

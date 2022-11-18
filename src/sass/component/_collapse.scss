@@ -15,6 +15,7 @@
     cursor: pointer;
     position: relative;
     z-index: 1;
+    font-size: 18px;
 
     @include media-query(small) {
       height: 38px;
@@ -30,12 +31,11 @@
 
   &__arrow {
     position: relative;
-    top: 10%;
+    right: 10px;
     pointer-events: none;
     transform: rotate(180deg);
     transition: transform 300ms;
-    transform-origin: bottom -25%;
-    translate: -50% -50%;
+
     @include media-query(medium) {
       height: 13px;
     }

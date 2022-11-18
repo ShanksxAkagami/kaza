@@ -23,10 +23,10 @@ const About = () => {
     <div className="about">
       <Banner image={imageBanner} />
       <div className="about__dropdowns">
-        <Collapse title="fiabilité" content={content("fiability")} />
-        <Collapse title="respect" content={content("respect")} />
-        <Collapse title="service" content={content("service")} />
-        <Collapse title="sécurité" content={content("sécurity")} />
+        <Collapse title="Fiabilité" content={content("fiability")} />
+        <Collapse title="Respect" content={content("respect")} />
+        <Collapse title="Service" content={content("service")} />
+        <Collapse title="Sécurité" content={content("sécurity")} />
       </div>
     </div>
   );
